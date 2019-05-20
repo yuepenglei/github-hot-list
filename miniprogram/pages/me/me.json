@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "loading": "../../components/loading/index",
+    "tabs": "../../../components/tabs/index",
+    "tab": "../../../components/tab/index",
+    "profile": "../../../components/profile/profile",
+    "repo": "../../../components/repo-item/repo-item"
+  },
+  "navigationBarTitleText": "个人中心"
+}

@@ -1,0 +1,5 @@
+<wxs module='filters' src='../../filter/issue.wxs'></wxs>
+<view class='issue' catchtap='toIssueDetail'>
+  <view class='title'>{{issue.title}}</view>
+  <view class='desc'>{{filters.format(issue)}}</view>
+</view>

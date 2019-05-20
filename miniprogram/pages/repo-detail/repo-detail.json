@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "tabs": "../../../components/tabs/index",
+    "tab": "../../../components/tab/index",
+    "issue": "../../../components/issueItem/issueItem",
+    "pull": "../../../components/pullItem/pullItem",
+    "contributor": "../../../components/contributor-item/contributor-item",
+    "nav-bar": "../../../components/navbar/navbar"
+  },
+  "navigationStyle":"custom"
+}

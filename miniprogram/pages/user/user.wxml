@@ -1,0 +1,20 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='margin-top: {{height}}px'>
+  <tabs bind:change='changeTab'>
+    <tab title='Overview'>
+      <profile user='{{user}}'></profile>
+    </tab>
+    <tab title='Repositories'>
+      <repo wx:for='{{repos}}' wx:key='{{index}}' repo='{{item}}'></repo>
+      <view class='loading' wx:if='{{loadingMore}}'>
+        <loading type='spinner' color="#fff" />
+      </view>
+    </tab>
+    <tab title='Starred'>
+      <repo wx:for='{{starred}}' wx:key='{{index}}' repo='{{item}}'></repo>
+      <view class='loading' wx:if='{{loadingMore}}'>
+        <loading type='spinner' color="#fff" />
+      </view>
+    </tab>
+  </tabs>
+</view>

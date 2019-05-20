@@ -1,0 +1,51 @@
+@import '../../lib/towxml/style/main.wxss';
+@import '../../lib/towxml/style/theme/dark.wxss';
+
+.comment {
+  padding: 20rpx 30rpx;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+}
+
+.author-time {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user {
+  margin-left: 10rpx;
+  padding: 0 20rpx;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  min-width: 100rpx;
+  min-height: 100rpx;
+  border-radius: 50%;
+}
+
+.time {
+  color: rgb(175, 175, 175);
+  font-size: 28rpx;
+  padding-right: 20rpx;
+}
+
+.reply {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+modal {
+  color: #000;
+}
+
+modal textarea {
+  width: 100%;
+}

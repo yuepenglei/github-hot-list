@@ -1,0 +1,51 @@
+<import src="../../lib/towxml/entry.wxml"/>
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class='repo' style='margin-top: {{height}}px'>
+  <view class='header'>
+    <image mode='aspectFit' class='avatar' src='{{repo.owner.avatar_url}}' catchtap='toUserDetail'></image>
+    <view class='name-time'>
+      <text class='name'>{{repo.full_name}}</text>
+      <text class='time'>{{repo.pushed_at}}</text>
+    </view>
+  </view>
+  <view class='stats'>
+    <view class='watch' catchtap='toggleWatching'>
+      <image mode='aspectFit' src='{{isWatching ? "/md/eye.png" : "/md/eye-un.png"}}'></image>
+      <text>{{repo.subscribers_count}}</text>
+    </view>
+    <view class='star' catchtap='toggleStar'>
+      <image mode='aspectFit' src='{{isStarred ? "/md/star.png" : "/md/star-un.png"}}'></image>
+      <text>{{repo.stargazers_count}}</text>
+    </view>
+    <view class='fork' catchtap='forkRepo'>
+      <image mode='aspectFit' src='/octicons/repo-forked.png'></image>
+      <text>{{repo.forks_count}}</text>
+    </view>
+    <view class='mark' data-repo='{{repo}}' catchtap='onStar'>
+      <image mode='aspectFit' src='{{repo.star_status?"/md/like.png":"/md/like-un.png"}}'></image>
+      <text>喜欢</text>
+    </view>
+  </view>
+  <tabs bind:change='changeTab' wx:if='{{showTabs}}'>
+    <tab title='Readme'>
+      <view class='readme'>
+        <template is="entry" data="{{...article}}"/>
+      </view>
+    </tab>
+    <!-- <tab title='Issues'>
+      <view wx:for='{{issues}}' wx:key='{{index}}'>
+        <issue issue='{{item}}'></issue>
+      </view>
+    </tab> -->
+    <tab title='Pull Requests'>
+      <view wx:for='{{pulls}}' wx:key='{{index}}'>
+        <pull pull='{{item}}'></pull>
+      </view>
+    </tab>
+        <tab title='Contributors'>
+      <view wx:for='{{contributors}}' wx:key='{{index}}'>
+        <contributor contributor='{{item}}'></contributor>
+      </view>
+    </tab>
+  </tabs>
+</view>

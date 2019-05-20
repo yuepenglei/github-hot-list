@@ -1,0 +1,88 @@
+{
+	"description": "项目配置文件",
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.0.0",
+	"appid": "wxd8aff7875f1e09cc",
+	"projectname": "mini-github-master0410",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "搜索页面",
+					"pathName": "pages/search-center/search-center",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "收藏中心",
+					"pathName": "pages/my-stars/my-stars",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "详情页面",
+					"pathName": "pages/repo-detail/repo-detail",
+					"query": "url=https://api.github.com/repos/996icu/996.ICU",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分享首页",
+					"pathName": "pages/trends/trends",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页面",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,5 @@
+<wxs module='filters' src='../../filter/pull.wxs'></wxs>
+<view class='pull' catchtap='toPullDetail'>
+  <view class='title'>{{pull.title}}</view>
+  <view class='desc'>{{filters.format(pull)}}</view>
+</view>

@@ -1,0 +1,13 @@
+var format = function(item) {
+  var repoFullName = (item.repository || {}).full_name
+  if (!repoFullName) {
+    var repoUrl = item.repository_url || ''
+    repoFullName = repoUrl.replace(getRegExp('https://api.github.com/repos/'), '')
+  }
+
+  return repoFullName + '#' + item.number + ' opened at ' + item.created_at
+};
+
+module.exports = {
+  format: format
+};

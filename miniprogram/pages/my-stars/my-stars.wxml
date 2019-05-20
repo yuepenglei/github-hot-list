@@ -1,0 +1,49 @@
+<view>
+
+<view  wx:if="{{trends.length == 0}}" class='remind'>
+
+<text>亲，暂时还没有收藏任何项目哦，赶紧去首页探索自己中意的项目吧～</text>
+
+</view>
+
+  <view class='repo' wx:for="{{trends}}" wx:key="{{index}}" data-repo='{{item}}' catchtap='toRepoDetail'>
+  
+    <!-- touxiang -->
+    <view class='sort-num'>
+    <image mode='aspectFit' class='avatar' src='{{item.avatar?item.avatar:"/md/avatar_defult.png"}}' catchtap='toUserDetail'></image>
+    </view>
+
+    <!-- 项目明细 -->
+    <view style='margin-left: 30rpx; flex:6;'>
+      <text class='name'>
+        {{util.sub(item)}}
+      </text>
+      <text class='desc'>{{item.description}}</text>
+      <view class='bottom'>
+        <view class='stars'>
+          <image mode='aspectFit' src='/octicons/calendar.png'></image>
+          <text>{{item.stars_time}}</text>
+        </view>
+        <view class='lang' wx:if='{{item.language}}'>
+          <image mode='aspectFit' src='/md/language.png'></image>
+          <text>{{item.language}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 删除按鈕 -->
+    <view class='del' data-repo='{{item}}' catchtap='onDel'>
+      <image style='width:45rpx;height:45rpx;' mode='aspectFit' src='/md/delete.png'></image>
+    </view>
+
+
+  </view>
+
+</view>
+
+<wxs module="util">
+    var sub = function(item) {
+        return item.full_name.length > 20 ? item.full_name.substring(0,20) + '······' : item.full_name
+    }
+    module.exports.sub = sub;
+</wxs>

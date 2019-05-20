@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/trends/trends",
+    "pages/feeds/feeds",
+    "pages/issues/issues",
+    "pages/pulls/pulls",
+    "pages/user/user",
+    "pages/me/me",
+    "pages/my-stars/my-stars",
+    "pages/issue-detail/issue-detail",
+    "pages/repo-detail/repo-detail",
+    "pages/login/login",
+    "pages/search/search",
+    "pages/search-center/search-center",
+    "pages/user-list/user-list",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundColor": "#24292e",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#24292e",
+    "navigationBarTitleText": "GitHub 热榜",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 100
+  },
+  "tabBar": {
+    "color": "#eee",
+    "selectedColor": "#fff",
+    "borderStyle": "white",
+    "backgroundColor": "#24292e",
+    "list": [
+      {
+        "pagePath": "pages/trends/trends",
+        "text": "Trending",
+        "iconPath": "octicons/flame.png",
+        "selectedIconPath": "octicons/flame.png"
+      },
+      {
+        "pagePath": "pages/search-center/search-center",
+        "text": "search",
+        "iconPath": "octicons/search.png",
+        "selectedIconPath": "octicons/search.png"
+      },
+      {
+        "pagePath": "pages/my-stars/my-stars",
+        "text": "Like",
+        "iconPath": "octicons/like.png",
+        "selectedIconPath": "octicons/like.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "Me",
+        "iconPath": "octicons/person.png",
+        "selectedIconPath": "octicons/person.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

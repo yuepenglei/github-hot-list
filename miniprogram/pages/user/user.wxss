@@ -1,0 +1,19 @@
+page {
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.login-button {
+  color: #fff;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.van-tabs__wrap {
+  position: fixed !important;
+}
+
+.loading {
+  text-align: center;
+}

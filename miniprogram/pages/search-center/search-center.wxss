@@ -1,0 +1,21 @@
+/* pages/search-center/search-center.wxss */
+
+.van-search {
+  padding: 20rpx !important;
+  background-color: #333;
+  width:90%;
+  margin:-15% 5%;
+}
+
+.bg{
+  width: 90%;
+  height: 20%;
+  margin: 0 5%;
+}
+
+
+
+
+.van-search__field .field-index--van-field {
+  border-radius: 8rpx !important;
+}

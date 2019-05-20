@@ -1,0 +1,16 @@
+<wxs module='filters' src='../../filter/issue.wxs'/>
+<view class='issue-detail' hover-class='hover-class' data-issue='{{issue}}' catchtap=''>
+  <text class='title' wx:if='{{issue.title}}'>{{issue.title}}</text>
+  <text class='repo' catchtap='toRepoDetail' wx:if='{{issue}}'>
+    {{repoName}}<text class='iconfont icon-goto'></text>
+  </text>
+  <view class='comment-wrapper' wx:if='{{issue}}'>
+    <comment comment='{{issue}}'></comment>
+  </view>
+  <view class='comment-wrapper' wx:for='{{comments}}' wx:key='{{index}}' >
+    <comment comment='{{item}}'></comment>
+  </view>
+  <view class='loading' wx:if='{{issue}}'>
+    <v-button plain round type='primary' size='small' loading='{{loadingMore}}' bind:click='loadMore' class='more-btn'>{{hasMore ? '加载更多' : '没有更多'}}</v-button>
+  </view>
+</view>

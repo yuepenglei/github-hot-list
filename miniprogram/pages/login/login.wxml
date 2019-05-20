@@ -1,0 +1,34 @@
+<view class='wrapper'>
+  <view class='main'>
+    <view class='logo'>
+      <image src='/octicons/mark-github.png'></image>
+    </view>
+    <!-- <tabs>
+      <tab title='账号密码'>
+        <form class='form' bindsubmit='commitAccount'>
+          <view>
+            <input name='username' placeholder='输入账号' focus></input>
+            <input name='password' placeholder='输入密码' password='true' value='{{password}}'></input>
+          </view>
+          <button class='login' formType='submit'>登陆</button>
+        </form>
+      </tab>
+      <tab title='Token'>
+        <form class='form' bindsubmit='commitToken'>
+          <view>
+            <input name='token' placeholder='输入 Token' focus></input>
+          </view>
+          <button class='login' formType='submit'>登陆</button>
+        </form>
+      </tab>
+    </tabs> -->
+            <form class='form' bindsubmit='commitAccount'>
+          <view>
+            <input name='username' placeholder='输入账号' focus></input>
+            <input name='password' placeholder='输入密码' password='true' value='{{password}}'></input>
+          </view>
+          <button class='login' formType='submit'>登陆</button>
+        </form>
+    <!-- <ad class='ad' unit-id="adunit-f30d4ae08359393c"></ad> -->
+  </view>
+</view>
