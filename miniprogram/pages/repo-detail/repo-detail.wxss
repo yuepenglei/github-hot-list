@@ -64,3 +64,11 @@
   min-width: 70rpx;
   min-height: 70rpx;
 } */
+/*重写分享按钮的样式*/
+.share button {
+  position: absolute;
+  height: 60px;
+  width: 40px; 
+  opacity: 0;
+  z-index: 99;
+}
