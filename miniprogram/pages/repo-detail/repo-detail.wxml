@@ -25,6 +25,12 @@
       <image mode='aspectFit' src='{{repo.star_status?"/md/like.png":"/md/like-un.png"}}'></image>
       <text>喜欢</text>
     </view>
+    <!--分享按钮的设置-->
+    <view class='share'>
+      <image mode='aspectFit' src='/octicons/transpond.png'></image>
+      <text>分享</text>
+      <button open-type='share' class='share'></button>
+    </view>
   </view>
   <tabs bind:change='changeTab' wx:if='{{showTabs}}'>
     <tab title='Readme'>
