@@ -1,4 +1,5 @@
 <view class='trends'>
+<add-tips />
 <!-- <multiFormid> -->
 <!-- 搜索 -->
   <view class='search'>

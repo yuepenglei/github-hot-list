@@ -1,6 +1,7 @@
 {
     "usingComponents": {
-      "multiFormid": "../../../components/multiFormId/multiFormid"
+      "multiFormid": "../../../components/multiFormId/multiFormid",
+      "add-tips": "/components/weplug-add-tips/weplug-add-tips"
     },
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "排行榜"
