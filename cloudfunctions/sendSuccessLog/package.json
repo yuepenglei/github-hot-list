@@ -1,5 +1,5 @@
 {
-  "name": "sendNoticeLog",
+  "name": "sendSuccessLog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

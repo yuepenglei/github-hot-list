@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
     let userList = list[i].data;
     for (let j = 0; j < userList.length; j++){
       try {
-        //await cloud.callFunction({ name: 'sendProxy', data: userList[j] });
+        
         await cloud.openapi.templateMessage.send({
           touser: userList[j]._openid,
           page: 'pages/trends/trends',
@@ -26,9 +26,11 @@ exports.main = async (event, context) => {
           templateId: 'wCV3Au2lzuvRrNlOwiBtfOz9Ortyi4vgb_1ZWVo0tV4',
           formId: userList[j].form_id,
         })
+        let data = { code: "111", msg: "msg", _openid: userList[j]._openid, form_id: userList[j].form_id}
+        await cloud.callFunction({ name: 'sendSuccessLog', data: data });
       } catch (e) {
         let data = { code: e.errCode, msg: e.errMsg, _openid: userList[j]._openid, form_id: userList[j].form_id}
-        await cloud.callFunction({ name: 'sendNoticeLog', data: data });
+        await cloud.callFunction({ name: 'sendFailLog', data: data });
       }
 
     }
