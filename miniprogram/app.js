@@ -12,10 +12,9 @@ App({
     //设置屏幕高度
     wx.getSystemInfo({
       success: (res) => {
-        this.globalData.height = res.statusBarHeight
+        that.globalData.height = res.statusBarHeight
       }
     })
-
   },
   globalData: {
     //用户信息

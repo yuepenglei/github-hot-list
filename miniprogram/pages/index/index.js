@@ -26,8 +26,6 @@ Page({
   bindGetUserInfo: function (e) {
     let that = this;
     let userInfo = e.detail.userInfo;
-debugger
-
     wx.cloud.callFunction({
       name: 'register',
       data: {

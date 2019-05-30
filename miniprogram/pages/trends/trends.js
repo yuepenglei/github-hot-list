@@ -56,6 +56,13 @@ Page({
 
 
   onLoad: function (options) {
+    //初始化收藏集合
+    wxdb.getOpenid().then(openid => {
+      //获取收藏列表
+      wxdb.queryStar(openid).then(stars => {
+        app.globalData.myStars = stars;
+      })
+    })
 
     app.globalData.trendingLoad = true;
     wxdb.getOpenid().then(data => {
@@ -247,6 +254,7 @@ Page({
     // }
 
   }
+  
 
 
 })

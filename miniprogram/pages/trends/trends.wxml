@@ -1,13 +1,6 @@
 <view class='trends'>
-<<<<<<< HEAD
 <add-tips class='addTips' />
-<!-- <multiFormid> -->
 <!-- 搜索 -->
-=======
-  <add-tips />
-  <!-- <multiFormid> -->
-  <!-- 搜索 -->
->>>>>>> d48a19d42b093f376071458109c3e4f9373ff247
   <view class='search'>
     <multiFormid>
       <picker mode='multiSelector' bindchange="changeFilter" value="{{selectedIndices}}" range="{{selectorValues}}" range-key='label'>
