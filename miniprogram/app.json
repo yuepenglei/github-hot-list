@@ -14,7 +14,8 @@
     "pages/search/search",
     "pages/search-center/search-center",
     "pages/user-list/user-list",
-    "pages/about/about"
+    "pages/about/about",
+    "components/menu/menu"
   ],
   "window": {
     "backgroundColor": "#24292e",

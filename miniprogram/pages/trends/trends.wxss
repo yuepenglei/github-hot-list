@@ -156,3 +156,16 @@ button {
   border-radius: 10rpx;
   margin-right: 10rpx;
 }
+
+/* 可移动区域样式  */
+.movearea{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.movearea .moveview{
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 100;
+}
