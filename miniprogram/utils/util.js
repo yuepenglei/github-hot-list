@@ -40,6 +40,7 @@ const parseLinks = (header) => {
   return links
 }
 
+//github登录验证
 const ensureSignedIn = () => {
   if (isSignedIn()) return true
 
@@ -52,6 +53,27 @@ const ensureSignedIn = () => {
       if (res.confirm) {
         wx.navigateTo({
           url: '/pages/login/login',
+        })
+      }
+    }
+  })
+  return false
+}
+
+//微信授权验证
+const wxSignedIn = () => {
+  if (wx.getStorageSync('wxSignedIn') == true){
+    return true
+  } 
+  wx.showModal({
+    title: '请先授权',
+    content: '此功能需要微信授权, 是否先去授权',
+    confirmText: '先去授权',
+    cancelText: '暂不授权',
+    success(res) {
+      if (res.confirm) {
+        wx.navigateTo({
+          url: '/pages/index/index',
         })
       }
     }
@@ -92,6 +114,7 @@ module.exports = {
   extractRepoName,
   extractIssueNumber,
   ensureSignedIn,
+  wxSignedIn,
   toStarTime,
   isUpdateFormId,
   updateFormId

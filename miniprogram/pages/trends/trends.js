@@ -95,6 +95,7 @@ Page({
       this.setData({
         trends: trends,
       })
+      this.selectComponent(".addTips").doShowModal();
       //初始化收藏样式
       //this.initStarStyle(trends);
       //更新最后刷新时间

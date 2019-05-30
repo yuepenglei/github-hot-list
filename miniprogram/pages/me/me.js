@@ -27,6 +27,7 @@ Page({
 
   onShow: function () {
     this.onLoad({})
+    this.selectComponent(".addTips").doShowModal();
   },
 
   onShareAppMessage: function (options) {

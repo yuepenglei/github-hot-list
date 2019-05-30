@@ -31,39 +31,52 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const trends = app.globalData.myStars.map((it, index) => {
-      it.stars_time = util.toStarTime(it.create_time);
-      return it
-    })
-    this.setData({
-      trends: app.globalData.myStars,
-    })
+    this.initMyStars();
   },
 
   //监听删除
   onDel: function (event) {
+    let that = this;
     let repo = event.currentTarget.dataset.repo;
     wxdb.getOpenid().then(openid => {
-        let that = this;
         let stars = new Array();
         //过滤
         stars = app.globalData.myStars.filter((it, index) => {
           return repo.url != it.url
         });
         //重置我的收藏列表
-        wxdb.setStar(openid, stars).then(data => {
+      wxdb.setStar(openid, stars).then(data => {
           wx.showToast({
             title: '取消收藏成功',
           })
-          //更新全局变量-我的收藏
-          app.globalData.myStars = stars;
-          app.globalData.trendingLoad = true;
-          this.setData({
-            trends: stars
+          that.setData({
+            trends: stars.map((it, index) => {
+              it.stars_time = util.toStarTime(it.create_time);
+              return it
+            })
           })
         })
     })
   },
+
+  //初始化收藏列表
+  initMyStars: function () {
+    let that = this;
+    //获取openid
+    wxdb.getOpenid().then(openid => {
+      //获取收藏列表
+      wxdb.queryStar(openid).then(stars => {
+        app.globalData.myStars = stars;
+        that.setData({
+          trends: stars.map((it, index) => {
+            it.stars_time = util.toStarTime(it.create_time);
+            return it
+          }),
+        })
+      })
+    })
+  },
+
 
   //跳转项目详情
   toRepoDetail: function (event) {

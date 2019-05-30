@@ -5,7 +5,8 @@
     "tabs": "../../../components/tabs/index",
     "tab": "../../../components/tab/index",
     "profile": "../../../components/profile/profile",
-    "repo": "../../../components/repo-item/repo-item"
+    "repo": "../../../components/repo-item/repo-item",
+    "add-tips": "../../../components/weplug-add-tips/weplug-add-tips"
   },
   "navigationBarTitleText": "个人中心"
 }

@@ -352,6 +352,9 @@ Page({
 
   //监听收藏
   onStar: function (event) {
+    if (!utils.wxSignedIn()){
+      return false;
+    }    
     let repo = event.currentTarget.dataset.repo;
     wxdb.getOpenid().then(openid => {
       if (repo.star_status) {
@@ -360,9 +363,6 @@ Page({
         this.addStar(openid, repo);
       }
     })
-    //通知热榜刷新
-    app.globalData.trendingLoad = true;
-
   },
 
   //添加收藏

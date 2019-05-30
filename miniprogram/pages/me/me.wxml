@@ -1,4 +1,5 @@
 <view>
+<add-tips class='addTips' />
   <tabs active='{{tab}}' bind:change='changeTab'>
     <tab title='个人中心'>
       <profile user='{{user}}' wx:if='{{user}}'></profile>

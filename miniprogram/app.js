@@ -9,18 +9,6 @@ App({
       traceUser: true
     })
 
-    wx.getSetting({
-      success(res) {
-        //信息过时
-        if (!res.authSetting['scope.userInfo']) {
-          console.log("授权信息过时")
-          wx.reLaunch({
-            url: "/pages/index/index"
-          })
-        }
-      }
-    })
-
     //设置屏幕高度
     wx.getSystemInfo({
       success: (res) => {

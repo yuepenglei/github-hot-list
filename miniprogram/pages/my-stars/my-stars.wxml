@@ -1,5 +1,5 @@
 <view>
-
+<add-tips class='addTips' />
 <view  wx:if="{{trends.length == 0}}" class='remind'>
 
 <text>亲，暂时还没有收藏任何项目哦，赶紧去首页探索自己中意的项目吧～</text>

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/trends/trends",
+    "pages/index/index",
     "pages/feeds/feeds",
     "pages/issues/issues",
     "pages/pulls/pulls",

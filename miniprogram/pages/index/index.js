@@ -14,8 +14,6 @@ Page({
       success(res) {
         //信息沒有过时
         if (res.authSetting['scope.userInfo']) {
-          //初始化收藏缓存
-          that.initMyStars();
           wx.switchTab({
             url: '/pages/trends/trends',
           });
@@ -28,7 +26,7 @@ Page({
   bindGetUserInfo: function (e) {
     let that = this;
     let userInfo = e.detail.userInfo;
-    console.log(userInfo) // 3
+debugger
 
     wx.cloud.callFunction({
       name: 'register',
@@ -38,28 +36,15 @@ Page({
         city: userInfo.city,
         stars: new Array()
       }}).then(res => {
-      that.initMyStars();
-      console.log(res.result) // 3
+        wx.setStorageSync('wxSignedIn', true);
+        wx.navigateBack({})
       }).catch(error => {
         console.log("云函数注册调用失败") // 3
         console.error
         })
   },
 
-  //初始化收藏列表
-  initMyStars: function (){
-    let that = this;
-    //获取openid
-    wxdb.getOpenid().then(openid => {
-      //获取收藏列表
-      wxdb.queryStar(openid).then(stars => {
-        //赋值全局变量
-        app.globalData.myStars = stars;
-        console.log("获取缓存数据数量:" + stars.length);
-        that.goToPage();
-      })
-    })
-  },
+
   //跳转页面
   goToPage: function (){
     let that = this;

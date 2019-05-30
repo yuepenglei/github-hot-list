@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "add-tips": "/components/weplug-add-tips/weplug-add-tips"
+  },
   "navigationBarTitleText": "我的收藏"
 }
