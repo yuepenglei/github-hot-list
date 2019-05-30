@@ -1,0 +1,14 @@
+<view class='menu_box'>
+  <view hidden='{{showmenus}}' class='out'>
+    <block wx:for='{{menulist}}' wx:key='menulist'>
+      <view class='menu_main' catchtap='itemclick' data-item='{{item}}'>
+        <!-- <button class='button_item' hidden='{{mainmodel.title.length > 0 ? flase:true}}'>{{item.title}}</button> -->
+        <button class='button_item' hidden='{{mainmodel.title.length > 0 ? flase:true}}' open-type='share'>分享给好友</button>
+      </view>
+    </block>
+  </view>
+  <view catchtap='showclick' class='menu_main'>
+    <image class='menu_img' src='{{mainmodel.url}}' />
+
+  </view>
+</view>

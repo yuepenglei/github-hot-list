@@ -1,0 +1,38 @@
+/* components/menu/menu.wxss */
+
+.menu_box{
+  position: fixed;
+  right: 30rpx;
+  display: flex;
+  justify-content: space-evenly;
+}
+.menu_main{
+  width: 70rpx;
+}
+.menu_img{
+  width: 60rpx;
+  height: 60rpx;
+ }
+.button_item{
+  display: flex;
+  width: 180rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-top-left-radius: 15rpx;
+  border-bottom-left-radius: 15rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  margin-left: -1vw;
+  background: #5B5657;
+  color: #61BC79;
+}
+.out{
+  height: 60rpx;
+  /* 多个选项，直接增加宽度容纳 */
+  width: 280rpx;
+  display: flex;
+  justify-content: space-around;
+}

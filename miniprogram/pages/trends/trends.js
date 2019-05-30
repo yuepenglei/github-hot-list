@@ -37,7 +37,21 @@ Page({
     lang: languages[0],
     selectorValues: [timeRange, languages],
     selectedIndices: [wx.getStorageSync(sinceCacheKey) || 0, wx.getStorageSync(langCacheKey) || 0],
-    trends: []
+    trends: [],// 悬浮菜单的菜单项
+    menulist: [
+      {
+        "id": "1",
+        "title": "分享给好友",
+      },
+      //   {
+      //     "id": "2",
+      //     "title": "|生成为图片",
+      //   },
+    ],
+    mainmodel: {
+      "url": "../../md/share.png",
+      "title": "菜单",
+    }
   },
 
 
@@ -211,6 +225,26 @@ Page({
     wx.navigateTo({
       url
     })
+  },
+
+  //按钮点击
+  menuItemClick: function (res) {
+    console.log(res);
+    //获取点击事件的信息
+    let clickInfo = res.detail.iteminfo
+    console.log(clickInfo);
+    // 根据不同类型进行判别处理
+    //事件的处理 代码
+
+    // if(clickInfo.id==1){
+    //   var url = this.data.url
+    //   var title = this.data.trends.full_name
+    //   return {
+    //     title,
+    //     path: `/pages/tredns/trends?url=${url}`
+    //   }
+    // }
+
   }
 
 

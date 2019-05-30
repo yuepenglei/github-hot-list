@@ -1,59 +1,67 @@
 <view class='trends'>
-<add-tips />
-<!-- <multiFormid> -->
-<!-- 搜索 -->
+  <add-tips />
+  <!-- <multiFormid> -->
+  <!-- 搜索 -->
   <view class='search'>
-    <multiFormid><picker mode='multiSelector' bindchange="changeFilter" value="{{selectedIndices}}" range="{{selectorValues}}" range-key='label'>
-      <image style='vertical-align: middle;' mode='aspectFit' src='/md/trending.png'></image>{{since.label}} / {{lang.label}}
-    </picker></multiFormid>
+    <multiFormid>
+      <picker mode='multiSelector' bindchange="changeFilter" value="{{selectedIndices}}" range="{{selectorValues}}" range-key='label'>
+        <image style='vertical-align: middle;' mode='aspectFit' src='/md/trending.png'></image>{{since.label}} / {{lang.label}}
+      </picker>
+    </multiFormid>
   </view>
-<!-- 列表 -->
-<multiFormid>
-  <view class='repo' wx:for="{{trends}}" wx:key="{{index}}" data-repo='{{item}}' bindtap='toRepoDetail'>
+  <!-- 悬浮按钮 -->
+  <movable-area class="movearea">
+    <movable-view class='moveview' direction="all" x='400' y='400'>
+      <menu bindmenuItemClick="menuItemClick" mainmodel="{{mainmodel}}" menulist="{{menulist}}"></menu>
+    </movable-view>
+    <!-- 列表 -->
+    <multiFormid>
+      <view class='repo' wx:for="{{trends}}" wx:key="{{index}}" data-repo='{{item}}' bindtap='toRepoDetail'>
 
-    <!-- 排序 -->
-    <view wx:if='{{item.item_index < 4}}' class='sort-num first-color'>
-    {{item.item_index}}
-    </view>
-    <view wx:elif='{{item.item_index < 10 && item.item_index > 3}}' class='sort-num second-color'>
-    {{item.item_index}}
-    </view>
-    <view wx:else class='sort-num third-color'>
-    {{item.item_index}}
-    </view>
+        <!-- 排序 -->
+        <view wx:if='{{item.item_index < 4}}' class='sort-num first-color'>
+          {{item.item_index}}
+        </view>
+        <view wx:elif='{{item.item_index < 10 && item.item_index > 3}}' class='sort-num second-color'>
+          {{item.item_index}}
+        </view>
+        <view wx:else class='sort-num third-color'>
+          {{item.item_index}}
+        </view>
 
-    <!-- 项目明细 -->
-    <view style='margin-left: 30rpx;'>
+        <!-- 项目明细 -->
+        <view style='margin-left: 30rpx;'>
 
-        <text class='name'>
+          <text class='name'>
           {{item.full_name}}
         </text>
-        <text class='desc'>{{item.description}}</text>
-        <view class='bottom'>
-          <view class='stars'>
-            <image mode='aspectFit' src='/md/unstar.png'></image>
-            <text>{{item.stargazers_count}}</text>
-          </view>
-          <view class='forks'>
-            <image mode='aspectFit' src='/octicons/repo-forked.png'></image>
-            <text>{{item.forks}}</text>
-          </view>
-          <view class='lang' wx:if='{{item.language}}'>
-            <image mode='aspectFit' src='/md/language.png'></image>
-            <text>{{item.language}}</text>
+          <text class='desc'>{{item.description}}</text>
+          <view class='bottom'>
+            <view class='stars'>
+              <image mode='aspectFit' src='/md/unstar.png'></image>
+              <text>{{item.stargazers_count}}</text>
+            </view>
+            <view class='forks'>
+              <image mode='aspectFit' src='/octicons/repo-forked.png'></image>
+              <text>{{item.forks}}</text>
+            </view>
+            <view class='lang' wx:if='{{item.language}}'>
+              <image mode='aspectFit' src='/md/language.png'></image>
+              <text>{{item.language}}</text>
+            </view>
           </view>
         </view>
-      </view>
 
-    <!-- 收藏按鈕 -->
-      <!-- <view class='mark' data-repo='{{item}}' catchtap='onStar'>
+        <!-- 收藏按鈕 -->
+        <!-- <view class='mark' data-repo='{{item}}' catchtap='onStar'>
         <image wx:if='{{item.star_status == true}}' mode='aspectFit' src='/md/mark.png'></image>
         <image wx:if='{{item.star_status == false}}' mode='aspectFit' src='/md/mark-un.png'></image>
       </view> -->
 
 
-  </view>
-  </multiFormid>
+      </view>
+    </multiFormid>
+  </movable-area>
   <!-- <ad wx:if='{{trends.length>0}}' unit-id="adunit-dff765999dd73930"></ad> -->
-<!-- </multiFormid> -->
+  <!-- </multiFormid> -->
 </view>
